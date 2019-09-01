@@ -57,8 +57,6 @@ class map:
             self.listexid.append([0,q * 2 + 1])
             self.listexid.append([(w) * 2,q * 2 + 1])
 
-        print(self.listexid)
-
         point = random.choice(self.listexid)
         del self.listexid[self.listexid.index(point)]
         self.maplab[point[0]][point[1]] = 2
@@ -117,10 +115,8 @@ class hero:
         self.seep()
 
     def print(self):
-        print("{} {} {} {}".format(self.map.maplab[self.seepoint[0]][self.seepoint[1]].type,
-            self.map.maplab[self.seepoint[0]][self.seepoint[1]].hp,self.lvl,self.hp))
-        print(self.point)
-        print(self.vektor)
+        return [self.map.maplab[self.seepoint[0]][self.seepoint[1]].type,
+            self.map.maplab[self.seepoint[0]][self.seepoint[1]].hp,self.lvl,self.hp]
 
     def seep(self):
         point = [self.point[0], self.point[1]]
@@ -162,11 +158,3 @@ class hero:
 
 
 
-
-M = map(20,20)
-M.print()
-hero = hero(M)
-
-while not hero.win:
-    hero.print()
-    hero.command(int(input()))
