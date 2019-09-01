@@ -2,7 +2,7 @@ import pygame
 import sys
 from main import map,hero
 
-M = map(int(input()),int(input()))
+M = map(10,10)
 hero = hero(M)
 
 WIN_WIDTH = 200
